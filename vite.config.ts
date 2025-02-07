@@ -8,4 +8,9 @@ export default defineConfig({
   build: {
     outDir: "dist-react",
   },
+  // HMR server
+  server: {
+    port: 5123,
+    strictPort: true,
+  },
 })

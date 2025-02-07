@@ -1,0 +1,13 @@
+{
+    // Convert electron Typescript files to Javascript
+    "compilerOptions": {
+        // req. strict types, null safety
+        "strict": true,
+        "target": "ESNext",
+        "module": "NodeNext",
+        // This is where to put generated JS
+        "outDir": "../../dist-electron",
+        // Ignore errors from dependencies
+        "skipLibCheck": true
+    }
+}

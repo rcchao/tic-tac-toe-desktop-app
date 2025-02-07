@@ -1,6 +1,8 @@
 import {app, BrowserWindow} from 'electron';
 import path from 'path';
 
+type test = string;
+
 app.on('ready', () => {
     // You can set the height and width of the winder in BrowserWindow
     const mainWindow = new BrowserWindow({});

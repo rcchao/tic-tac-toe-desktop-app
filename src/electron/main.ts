@@ -5,7 +5,7 @@ import { isDev } from './util.js'
 
 app.on('ready', () => {
     // You can set the height and width of the winder in BrowserWindow
-    const mainWindow = new BrowserWindow({});
+    const mainWindow = new BrowserWindow({height: 500, width: 500});
     
     if (isDev()) {
         mainWindow.loadURL('http://localhost:5123')

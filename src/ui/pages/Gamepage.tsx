@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom";
 import Board from "../components/Board";
 
-// function handleSquareClick() {
-//     console.log("hiii")
-// }
-
 function Gamepage() {
   return (
     <div>

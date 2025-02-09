@@ -1,13 +1,19 @@
 import { useState } from "react"
 import Square from "./Square";
+import declareWinner from "../utils/declareWinner";
 
-const BOARD_SIZE = 3
+export const BOARD_SIZE = 3
 
 function Board() {
-  const [squares, setSquares] = useState(Array(9).fill(null));
-  const [XisNext, setXisNext]  = useState(true);
+  const [squares, setSquares] = useState<Array<string | null>>(Array(9).fill(null));
+  const [XisNext, setXisNext]  = useState<Boolean>(true);
 
   const handleClick = (index: number) => {
+    // Return early if game is won/ space is already filled
+    if (declareWinner(squares) || squares[index]) {
+      return
+    }
+
     // Create a shallow copy of the squares & update board
     let newSquares = squares.slice()
     newSquares[index] = XisNext ? "X" : "O"
@@ -31,8 +37,17 @@ function Board() {
     );
   };
 
+  const winner = declareWinner(squares)
+  let gameStatus
+  if (winner) {
+    gameStatus = "Winner: " + winner;
+  } else {
+    gameStatus = "Next player is: " + (XisNext ? "X" : "O")
+  }
+
   return (
     <div>
+        <div>{gameStatus}</div>
         {Array.from({ length: BOARD_SIZE }, (_, rowIndex) => renderRow(rowIndex))}
     </div>
   );

@@ -1,6 +1,6 @@
 import { useState } from "react"
 import Square from "./Square";
-import declareWinner from "../utils/declareWinner";
+import declareOutcome from "../utils/declareOutcome.tsx";
 
 export const BOARD_SIZE = 3
 
@@ -10,7 +10,7 @@ function Board() {
 
   const handleClick = (index: number) => {
     // Return early if game is won/ space is already filled
-    if (declareWinner(squares) || squares[index]) {
+    if (declareOutcome(squares) || squares[index]) {
       return
     }
 
@@ -37,7 +37,7 @@ function Board() {
     );
   };
 
-  const winner = declareWinner(squares)
+  const winner = declareOutcome(squares)
   let gameStatus
   if (winner) {
     gameStatus = "Winner: " + winner;

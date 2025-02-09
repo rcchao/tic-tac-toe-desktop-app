@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Winpage() {
+function Endpage() {
   return (
     <div>
       <h1>[Insert name] wins!</h1>
@@ -11,4 +11,4 @@ function Winpage() {
   );
 }
 
-export default Winpage;
+export default Endpage;

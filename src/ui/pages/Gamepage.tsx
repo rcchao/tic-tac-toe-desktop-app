@@ -6,7 +6,7 @@ function Gamepage() {
     <div>
       <Board />
       <button>
-        <Link to="/win">Go to win screen</Link>
+        <Link to="/end">Go to win screen</Link>
       </button>
     </div>
   );

@@ -1,6 +1,6 @@
 // import BOARD_SIZE from "../components/Board.tsx"
 
-function declareWinner(Squares: Array<string | null>) {
+function declareOutcome(Squares: Array<string | null>) {
   const winningCombis = [
     [0, 1, 2],
     [3, 4, 5],
@@ -12,7 +12,6 @@ function declareWinner(Squares: Array<string | null>) {
     [2, 4, 6],
   ];
 
-  // 
   for (let i = 0; i < winningCombis.length; i++) {
     const [a, b, c] = winningCombis[i];
     if (Squares[a] && Squares[a] === Squares[b] && Squares[a] === Squares[c]) {
@@ -22,4 +21,4 @@ function declareWinner(Squares: Array<string | null>) {
   return null;
 }
 
-export default declareWinner
+export default declareOutcome

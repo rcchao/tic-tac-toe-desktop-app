@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import Gamepage from "./pages/Gamepage";
-import Winpage from "./pages/Winpage";
+import Endpage from "./pages/Endpage";
 import "./App.css";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/game" element={<Gamepage />} />
-          <Route path="/win" element={<Winpage />} />
+          <Route path="/end" element={<Endpage />} />
         </Routes>
       </div>
     </Router>

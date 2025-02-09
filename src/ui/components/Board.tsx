@@ -44,16 +44,11 @@ function Board({onOutcomeChange}: BoardProps) {
 
   const outcome = declareOutcome(squares)
   let gameStatus
-  if (outcome) {
-    if (outcome === TIE) {
-      gameStatus = outcome
-    } else {
-      gameStatus = "Winner: " + outcome;
-    }
-  } else {
+  if (!outcome) {
     gameStatus = "It's player " + (XisNext ? "X" : "O") + "'s turn!"
   }
 
+  // update outcome to pass state up
   useEffect(() => {
     onOutcomeChange(outcome);
   }, [outcome, onOutcomeChange])

@@ -1,15 +1,16 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Board from "../components/Board";
 
-function Gamepage() {
-  const [outcome, setOutcome] = useState<string|null>(null)
+interface GamepageProps {
+  onOutcomeChange: (outcome: string | null) => void;
+  outcome: string | null;
+}
+
+function Gamepage({onOutcomeChange, outcome}: GamepageProps) {
   const navigate = useNavigate();
 
-  function handleOutcomeChange(outcome: string|null) {
-    setOutcome(outcome);
-  };
-
+  // Navigate to end screen if game ends
   useEffect(() => {
     if (outcome) {
       navigate('/end');
@@ -18,7 +19,7 @@ function Gamepage() {
 
   return (
     <div>
-      <Board onOutcomeChange={handleOutcomeChange}/>
+      <Board onOutcomeChange={onOutcomeChange}/>
     </div>
   );
 }

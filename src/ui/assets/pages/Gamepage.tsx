@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
+import Board from "../components/Board";
+
+// function handleSquareClick() {
+//     console.log("hiii")
+// }
 
 function Gamepage() {
   return (
     <div>
-      <h1>Game Page</h1>
+      <Board />
       <button>
         <Link to="/win">Go to win screen</Link>
       </button>

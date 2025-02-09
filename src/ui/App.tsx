@@ -1,17 +1,19 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Homepage from "./Homepage";
-import Gamepage from "./Gamepage";
-import Winpage from "./Winpage";
+import Homepage from "./assets/pages/Homepage";
+import Gamepage from "./assets/pages/Gamepage";
+import Winpage from "./assets/pages/Winpage";
 import "./App.css";
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/game" element={<Gamepage />} />
-        <Route path="/win" element={<Winpage />} />
-      </Routes>
+      <div>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/game" element={<Gamepage />} />
+          <Route path="/win" element={<Winpage />} />
+        </Routes>
+      </div>
     </Router>
   );
 }

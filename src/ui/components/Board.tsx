@@ -3,6 +3,7 @@ import Square from "./Square";
 import declareOutcome from "../utils/declareOutcome.tsx";
 
 export const BOARD_SIZE = 3
+export const TIE = "Tie"
 
 function Board() {
   const [squares, setSquares] = useState<Array<string | null>>(Array(9).fill(null));
@@ -37,10 +38,14 @@ function Board() {
     );
   };
 
-  const winner = declareOutcome(squares)
+  const outcome = declareOutcome(squares)
   let gameStatus
-  if (winner) {
-    gameStatus = "Winner: " + winner;
+  if (outcome) {
+    if (outcome === TIE) {
+      gameStatus = outcome
+    } else {
+      gameStatus = "Winner: " + outcome;
+    }
   } else {
     gameStatus = "Next player is: " + (XisNext ? "X" : "O")
   }

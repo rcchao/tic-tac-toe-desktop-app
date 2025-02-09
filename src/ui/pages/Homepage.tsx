@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Homepage() {
   return (
     <div>
-      <h1>Let's play tic tac toe!</h1>
+      <h2>Let's play tic tac toe!</h2>
       <button>
         <Link to="/game">Go to game</Link>
       </button>

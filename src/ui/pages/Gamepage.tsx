@@ -1,13 +1,25 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Board from "../components/Board";
 
-function Gamepage() {
+interface GamepageProps {
+  onOutcomeChange: (outcome: string | null) => void;
+  outcome: string | null;
+}
+
+function Gamepage({onOutcomeChange, outcome}: GamepageProps) {
+  const navigate = useNavigate();
+
+  // Navigate to end screen if game ends
+  useEffect(() => {
+    if (outcome) {
+      navigate('/end');
+    }
+  }, [outcome, navigate])
+
   return (
     <div>
-      <Board />
-      <button>
-        <Link to="/end">Go to win screen</Link>
-      </button>
+      <Board onOutcomeChange={onOutcomeChange}/>
     </div>
   );
 }

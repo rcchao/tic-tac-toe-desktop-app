@@ -1,20 +1,42 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
+import { useState, useEffect } from "react";
 import Homepage from "./pages/Homepage";
 import Gamepage from "./pages/Gamepage";
 import Endpage from "./pages/Endpage";
 import "./App.css";
 
 function App() {
+  const [outcome, setOutcome] = useState<string | null>(null);
+  const location = useLocation();
+
+  function handleOutcomeChange(outcome: string | null) {
+    setOutcome(outcome);
+  }
+
+  // Reset outcome when game restarts
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setOutcome(null);
+    }
+  }, [location]);
+
   return (
-    <Router>
-      <div>
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/game" element={<Gamepage />} />
-          <Route path="/end" element={<Endpage />} />
-        </Routes>
-      </div>
-    </Router>
+    <div>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route
+          path="/game"
+          element={
+            <Gamepage onOutcomeChange={handleOutcomeChange} outcome={outcome} />
+          }
+        />
+        <Route path="/end" element={<Endpage outcome={outcome} />} />
+      </Routes>
+    </div>
   );
 }
 

@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
+import { TIE } from "../components/Board";
 
-function Endpage() {
+interface GamepageProps {
+  outcome: string | null;
+}
+
+function Endpage({outcome}: GamepageProps) {
   return (
     <div>
-      <h1>[Insert name] wins!</h1>
+      {outcome !== TIE ? <h2> Player {outcome} wins!</h2> : <h2>It's a {outcome}!</h2>}
       <button>
         <Link to="/">Play again?</Link>
       </button>

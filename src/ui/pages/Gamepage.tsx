@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import Board from "../components/Board";
 
 function Gamepage() {
   return (
     <div>
-      <h1>Game Page</h1>
+      <Board />
       <button>
-        <Link to="/win">Go to win screen</Link>
+        <Link to="/end">Go to win screen</Link>
       </button>
     </div>
   );

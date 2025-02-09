@@ -20,7 +20,7 @@ function Board() {
     newSquares[index] = XisNext ? "X" : "O"
     setSquares(newSquares)
 
-    // Update who the next player us
+    // Update who the next player is
     setXisNext(!XisNext)
   }
 

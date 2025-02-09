@@ -1,13 +1,24 @@
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Board from "../components/Board";
 
 function Gamepage() {
+  const [outcome, setOutcome] = useState<string|null>(null)
+  const navigate = useNavigate();
+
+  function handleOutcomeChange(outcome: string|null) {
+    setOutcome(outcome);
+  };
+
+  useEffect(() => {
+    if (outcome) {
+      navigate('/end');
+    }
+  }, [outcome, navigate])
+
   return (
     <div>
-      <Board />
-      <button>
-        <Link to="/end">Go to win screen</Link>
-      </button>
+      <Board onOutcomeChange={handleOutcomeChange}/>
     </div>
   );
 }

@@ -1,11 +1,15 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Square from "./Square";
 import declareOutcome from "../utils/declareOutcome.tsx";
 
 export const BOARD_SIZE = 3
 export const TIE = "Tie"
 
-function Board() {
+interface BoardProps {
+  onOutcomeChange: (outcome: string | null) => void;
+}
+
+function Board({onOutcomeChange}: BoardProps) {
   const [squares, setSquares] = useState<Array<string | null>>(Array(9).fill(null));
   const [XisNext, setXisNext]  = useState<Boolean>(true);
 
@@ -47,8 +51,12 @@ function Board() {
       gameStatus = "Winner: " + outcome;
     }
   } else {
-    gameStatus = "Next player is: " + (XisNext ? "X" : "O")
+    gameStatus = "It's player " + (XisNext ? "X" : "O") + "'s turn!"
   }
+
+  useEffect(() => {
+    onOutcomeChange(outcome);
+  }, [outcome, onOutcomeChange])
 
   return (
     <div>

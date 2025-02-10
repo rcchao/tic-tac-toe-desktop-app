@@ -55,8 +55,8 @@ function Board({onOutcomeChange}: BoardProps) {
 
   return (
     <div>
-        <div>{gameStatus}</div>
         {Array.from({ length: BOARD_SIZE }, (_, rowIndex) => renderRow(rowIndex))}
+        <div>{gameStatus}</div>
     </div>
   );
 }

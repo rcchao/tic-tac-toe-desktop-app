@@ -8,6 +8,8 @@ import Homepage from "./pages/Homepage";
 import Gamepage from "./pages/Gamepage";
 import Endpage from "./pages/Endpage";
 import "./App.css";
+import "./index.css";
+import TitleBar from "./components/TitleBar"
 
 function App() {
   const [outcome, setOutcome] = useState<string | null>(null);
@@ -26,6 +28,7 @@ function App() {
 
   return (
     <div>
+      <TitleBar/>
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route

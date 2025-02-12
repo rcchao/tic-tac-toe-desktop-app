@@ -45,7 +45,7 @@ function Board({onOutcomeChange}: BoardProps) {
   const outcome = declareOutcome(squares)
   let gameStatus
   if (!outcome) {
-    gameStatus = "It's player " + (XisNext ? "X" : "O") + "'s turn!"
+    gameStatus = "It's Player " + (XisNext ? "X" : "O") + "'s turn!"
   }
 
   // update outcome to pass state up
@@ -53,10 +53,13 @@ function Board({onOutcomeChange}: BoardProps) {
     onOutcomeChange(outcome);
   }, [outcome, onOutcomeChange])
 
+  // TODO: get rid of inline CSS and change it
   return (
-    <div>
-        {Array.from({ length: BOARD_SIZE }, (_, rowIndex) => renderRow(rowIndex))}
-        <div>{gameStatus}</div>
+    <div style={{display: 'flex',justifyContent: 'center', alignItems: 'center', height: '200px' }}>
+      <div>
+      {Array.from({ length: BOARD_SIZE }, (_, rowIndex) => renderRow(rowIndex))}
+      <div>{gameStatus}</div>
+      </div>
     </div>
   );
 }

@@ -2,8 +2,10 @@
   max-width: 100%;
   height: 100%;
   display: flex;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
   text-align: center;
+  flex-direction: column;
 }
 
 .square {

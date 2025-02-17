@@ -3,7 +3,7 @@ import {
   Routes,
   useLocation,
 } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import Homepage from "./pages/Homepage";
 import Gamepage from "./pages/Gamepage";
 import Endpage from "./pages/Endpage";
@@ -21,10 +21,10 @@ function App() {
 
   // Reset outcome when game restarts
   useEffect(() => {
-    if (location.pathname === "/") {
+    if (location.pathname === "/" && outcome !== null) {
       setOutcome(null);
     }
-  }, [location]);
+  }, [location, outcome]);
 
   return (
     <div>

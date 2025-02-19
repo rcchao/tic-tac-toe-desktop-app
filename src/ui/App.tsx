@@ -11,6 +11,8 @@ import "./App.css";
 import "./index.css";
 import TitleBar from "./components/TitleBar"
 
+// TODO: Fix the weird skip through different pages due to UseEffect
+
 function App() {
   const [outcome, setOutcome] = useState<string | null>(null);
   const location = useLocation();

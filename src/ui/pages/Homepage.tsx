@@ -4,7 +4,7 @@ function Homepage() {
   return (
     <div>
       <h2>Let's play <br/>tic tac toe!</h2>
-      <button>
+      <button className="play-button">
         <Link to="/game">Play</Link>
       </button>
     </div>

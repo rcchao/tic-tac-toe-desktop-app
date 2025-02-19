@@ -7,19 +7,21 @@ interface GamepageProps {
   outcome: string | null;
 }
 
-function Gamepage({onOutcomeChange, outcome}: GamepageProps) {
+function Gamepage({ onOutcomeChange, outcome }: GamepageProps) {
   const navigate = useNavigate();
 
   // Navigate to end screen if game ends
   useEffect(() => {
     if (outcome) {
-      navigate('/end');
+      navigate("/end");
     }
-  }, [outcome, navigate])
+  }, [outcome, navigate]);
 
   return (
-    <div>
-      <Board onOutcomeChange={onOutcomeChange}/>
+    <div className="page-container">
+      <div className="game-border">
+        <Board onOutcomeChange={onOutcomeChange} />
+      </div>
     </div>
   );
 }

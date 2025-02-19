@@ -74,6 +74,10 @@ button:focus-visible {
   width: 111px;
 }
 
+.play-again-button {
+  width: 182px;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #000000;
@@ -129,4 +133,28 @@ button:focus-visible {
 
 .title-bar-header button:hover img {
   filter: brightness(0.9); /* Darken the image on hover */
+}
+
+.page-container {
+  flex: 1; /* Take up remaining space */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.game-border {
+  width: 290px;
+  height: 349px;
+  background-color: #B8DAFF;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 2px solid black;
+  align-items: center;
+  justify-content: center; /* Center vertically */
+
+  /* Disable text selection */
+  user-select: none;
+  -webkit-user-select: none;
 }

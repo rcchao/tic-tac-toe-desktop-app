@@ -98,6 +98,7 @@ button:focus-visible {
   box-sizing: border-box;
   display: flex;
   position: relative;
+  -webkit-app-region: drag;
 }
 
 .title-bar-header .title{

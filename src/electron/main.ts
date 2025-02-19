@@ -12,7 +12,7 @@ app.on('ready', () => {
         height: 417,
         width: 312,
         resizable: false,
-        //frame: false
+        frame: false
     });
     
     if (isDev()) {

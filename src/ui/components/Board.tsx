@@ -58,7 +58,7 @@ function Board({onOutcomeChange}: BoardProps) {
     <div style={{display: 'flex',justifyContent: 'center', alignItems: 'center', height: '200px' }}>
       <div>
       {Array.from({ length: BOARD_SIZE }, (_, rowIndex) => renderRow(rowIndex))}
-      <div>{gameStatus}</div>
+      <div className="game-status" >{gameStatus}</div>
       </div>
     </div>
   );

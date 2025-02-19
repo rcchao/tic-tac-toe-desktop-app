@@ -8,22 +8,41 @@
   flex-direction: column;
 }
 
+/* TODO: Get rid of the white borde*/
+
 .square {
-  background: #fff;
-  border: 1px solid #999;
+  background: #A3CBFF;
+  border: 1px solid #ffffff;
+  display: flex; /* Use Flexbox */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
   float: left;
   font-size: 24px;
   font-weight: bold;
   line-height: 34px;
-  height: 34px;
+  height: 75px;
+  width: 75px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 34px;
   border-radius: 0;
+}
+
+.square:focus {
+  outline: none; /* Remove focus outline when the square is focused */
+}
+
+
+.token {
+  width: 80%;
+  height: 80%;
 }
 
 .board-row {
   display: flex;
+}
+
+.game-status {
+  margin-top: 30px;
 }

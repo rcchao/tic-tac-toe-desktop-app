@@ -99,6 +99,10 @@ button:focus-visible {
   display: flex;
   position: relative;
   -webkit-app-region: drag;
+
+  /* Disable text selection */
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .title-bar-header .title{

@@ -1,15 +1,25 @@
+// import { ipcRenderer } from "electron";
 import "../index.css";
 import closeWindow from "../assets/closeWindow.png";
 import minimise from "../assets/minimise.png";
+
+declare global {
+  interface Window {
+    electronAPI: {
+      closeApp: () => void;
+      minimiseApp: () => void;
+    };
+  }
+}
 
 function TitleBar() {
   return (
     <div className="title-bar-header">
       <div className="title">Tic Tac Toe</div>
-      <button className="close" onClick={() => console.log("close")}>
+      <button id = "closeButton" className="close" onClick={ () => window.electronAPI.closeApp()}>
         <img src={closeWindow} />
       </button>
-      <button className="minimise" onClick={() => console.log("minimise")}>
+      <button className="minimise" onClick={() => window.electronAPI.minimiseApp()}>
         <img src={minimise} />
       </button>
     </div>

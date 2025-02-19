@@ -9,7 +9,7 @@ function Homepage() {
           tic tac toe!
         </h2>
         <button className="play-button">
-          <Link to="/game">Play</Link>
+          <Link to="/game" className="play-link">Play</Link>
         </button>
       </div>
     </div>

@@ -114,11 +114,18 @@ button:focus-visible {
   padding: 0;
 
   position: absolute;
-  right: 17px;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
   -webkit-app-region: no-drag;
+}
+
+.title-bar-header .close{
+  right: 17px;
+}
+
+.title-bar-header .minimise{
+  right: 51px;
 }
 
 .title-bar-header button:hover img {

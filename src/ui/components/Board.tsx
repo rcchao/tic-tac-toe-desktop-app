@@ -53,9 +53,8 @@ function Board({onOutcomeChange}: BoardProps) {
     onOutcomeChange(outcome);
   }, [outcome, onOutcomeChange])
 
-  // TODO: get rid of inline CSS and change it
   return (
-    <div style={{display: 'flex',justifyContent: 'center', alignItems: 'center', height: '200px' }}>
+    <div className="board">
       <div>
       {Array.from({ length: BOARD_SIZE }, (_, rowIndex) => renderRow(rowIndex))}
       <div className="game-status" >{gameStatus}</div>

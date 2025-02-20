@@ -8,8 +8,6 @@
   flex-direction: column;
 }
 
-/* TODO: Get rid of the white borde*/
-
 .square {
   background: #A3CBFF;
   border: 1px solid #ffffff;
@@ -33,7 +31,6 @@
   outline: none; /* Remove focus outline when the square is focused */
 }
 
-
 .token {
   width: 80%;
   height: 80%;
@@ -41,6 +38,13 @@
 
 .board-row {
   display: flex;
+}
+
+.board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
 }
 
 .game-status {

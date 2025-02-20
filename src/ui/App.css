@@ -11,9 +11,9 @@
 .square {
   background: #A3CBFF;
   border: 1px solid #ffffff;
-  display: flex; /* Use Flexbox */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
+  display: flex; 
+  align-items: center;
+  justify-content: center; 
   float: left;
   font-size: 24px;
   font-weight: bold;
@@ -28,7 +28,7 @@
 }
 
 .square:focus {
-  outline: none; /* Remove focus outline when the square is focused */
+  outline: none;
 }
 
 .token {

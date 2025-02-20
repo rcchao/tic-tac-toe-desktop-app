@@ -12,6 +12,10 @@ This is my first personal project outside of a hackathon—a simple Tic Tac Toe 
 
 ##  Demo:
 
+
+https://github.com/user-attachments/assets/06406a53-ff38-40d3-b5e9-69ea05a009ff
+
+
 ## To run on your machine:
 1. Clone the repo and cd into your folder
 2. Install dependencies

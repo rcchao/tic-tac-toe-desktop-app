@@ -1,6 +1,6 @@
 {
     "appId": "com.bec-chao.tic-tac-toe",
-    "files": ["dist-electron", "dist-react"],
+    "files": ["dist-electron", "dist-react","src/electron/preload.js"],
     "icon": "./desktopIcon.icns",
     "mac": {
         "target": "dmg"

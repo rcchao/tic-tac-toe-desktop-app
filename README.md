@@ -1,6 +1,6 @@
 # 🎮 Tic Tac Toe Desktop App
 
-This is my first personal project outside of a hackathon—a simple Tic Tac Toe desktop application built using the **Electron.js** framework. It is designed to be cross-platform (Mac, Linux, and Windows), but so far, I have only tested it on macOS.
+This is my first personal project outside of a hackathon! It's a simple Tic Tac Toe desktop application built using the **Electron.js** framework. It is designed to be cross-platform (Mac, Linux, and Windows), but I've only tested it on macOS. If you run into issues setting this up locally, let me know and I can alter the instructions.
 
 ##  Tech Stack
 - **TypeScript**  
